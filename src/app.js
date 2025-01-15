@@ -1,11 +1,26 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+function displayWebNames() {
+  let pronouns = ["the", "our", "your"];
+  let adjectives = ["great", "big", "small"];
+  let nouns = ["jogger", "racoon", "ant"];
+  let result = [];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  for (let i = 0; i < pronouns.length; i++) {
+    for (let j = 0; j < adjectives.length; j++) {
+      for (let k = 0; k < nouns.length; k++) {
+        let webname = pronouns[i] + adjectives[j] + nouns[k] + ".com";
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+        result.push(webname);
+      }
+    }
+  }
+
+  let htmlList = "<ul>";
+  for (let i = 0; i < result.length; i++) {
+    htmlList += "<li>" + result[i] + "</li>";
+  }
+  htmlList += "</ul>";
+
+  document.getElementById("web").innerHTML = htmlList;
+}
+
+displayWebNames();
